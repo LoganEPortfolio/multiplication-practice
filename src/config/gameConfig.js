@@ -85,7 +85,7 @@ export const STREAK_BONUS = Object.freeze({
 
 /** Session length choices shown on the start screen */
 export const SESSION_OPTIONS = Object.freeze([
-Object.freeze({ minutes: 0.5, label: '30 Seconds (test)' }),
+Object.freeze({ minutes: 5, label: '5 Minutes' }),
   Object.freeze({ minutes: 10, label: '10 Minutes' }),
   Object.freeze({ minutes: 20, label: '20 Minutes' }),
 ])

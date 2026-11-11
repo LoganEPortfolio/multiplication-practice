@@ -73,7 +73,7 @@ describe('rules', () => {
   })
 
   it('offers 10 and 20 minute sessions', () => {
-    expect(SESSION_OPTIONS.map((o) => o.minutes)).toEqual([10, 20])
+    expect(SESSION_OPTIONS.map((o) => o.minutes)).toEqual([5, 10, 20])
   })
 })
 
