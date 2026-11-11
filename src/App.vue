@@ -1,11 +1,18 @@
-<script setup></script>
+<script setup>
+import { reactive } from 'vue'
+import { useGameSession } from '@/composables/useGameSession'
+import StartScreen from '@/components/StartScreen.vue'
+import GameScreen from '@/components/GameScreen.vue'
+import ResultsScreen from '@/components/ResultsScreen.vue'
+
+// reactive() unwraps the refs so components can read session.score, etc. directly
+const session = reactive(useGameSession())
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <main class="app">
+    <StartScreen v-if="session.status === 'idle'" :session="session" />
+    <GameScreen v-else-if="session.status === 'playing' || session.status === 'paused'" :session="session" />
+    <ResultsScreen v-else :session="session" />
+  </main>
 </template>
-
-<style scoped></style>
